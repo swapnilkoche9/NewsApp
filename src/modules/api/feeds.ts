@@ -1,4 +1,4 @@
-import { Feed } from '../dtos/feeds';
+import { Feed } from '../../dtos/feeds';
 
 const feedsData = [
   {
@@ -83,6 +83,7 @@ const feedsData = [
 export const getAllFeeds = async (): Promise<Feed[]> => {
   //await for the response
   //currently just simulating  delay with setTimeout
+  //Error handling can be done using try catch to collect server errors
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(feedsData);

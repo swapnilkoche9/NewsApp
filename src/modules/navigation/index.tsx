@@ -2,9 +2,10 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import DetailsScreen from '../screens/DetailsScreen/DetailsScreen';
-import WebViewDetailsScreen from '../screens/WebViewDetailsScreen/WebViewDetailsScreen';
+import HomeScreen from '../../screens/HomeScreen/HomeScreen';
+import DetailsScreen from '../../screens/DetailsScreen/DetailsScreen';
+import WebViewDetailsScreen from '../../screens/WebViewDetailsScreen/WebViewDetailsScreen';
+import FavoriteFeedItemsScreen from '../../screens/FavoriteFeedItemsScreen/FavoriteFeedItemsScreen';
 
 const RootStack = createStackNavigator();
 const Stack = createStackNavigator();
@@ -25,6 +26,11 @@ const RootStackScreen = () => (
       name="DeatilsWebView"
       options={{ title: 'Feed Details' }}
       component={WebViewDetailsScreen}
+    />
+    <Stack.Screen
+      name="FavoriteItems"
+      options={{ title: 'Favorite Feed Items' }}
+      component={FavoriteFeedItemsScreen}
     />
   </Stack.Navigator>
 );

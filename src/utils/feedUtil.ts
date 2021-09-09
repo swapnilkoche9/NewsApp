@@ -1,9 +1,8 @@
 import moment from 'moment';
-import { FeedItem } from '../dtos/feeds';
+import { FeedItem, Feed } from '../dtos/feeds';
 import { formatDate } from './utils';
 
 export const sortedFeedsByDate = (feedItems: FeedItem[]): FeedItem[] => {
-  console.log(feedItems);
   return feedItems.sort((item1: FeedItem, item2: FeedItem) =>
     moment.utc(item2.pubDate).diff(moment.utc(item1.pubDate)),
   );
@@ -18,4 +17,16 @@ export const generateFeedDetailsHtml = (item: FeedItem): string => {
   const html = `${title}${date}${description}`;
 
   return html;
+};
+
+export const buildFavoriteFeeds = (
+  feeds: Feed[],
+  fevoriteFeedIds: string[],
+): FeedItem[] => {
+  const filteredFeeds = feeds
+    .map(feed => feed.items)
+    .flat()
+    .filter(item => fevoriteFeedIds.includes(item.id));
+
+  return filteredFeeds;
 };

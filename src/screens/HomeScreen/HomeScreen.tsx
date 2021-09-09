@@ -6,6 +6,7 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  Pressable,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -42,6 +43,14 @@ const styles = StyleSheet.create({
   ListEmptyComponent: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  showFavoriteButton: {
+    marginTop: 30,
+    backgroundColor: '#b5e7a0',
+    padding: 5,
+    width: '30%',
+    alignSelf: 'center',
     alignItems: 'center',
   },
 });
@@ -83,6 +92,11 @@ const HomeScreen: FC = () => {
           ListHeaderComponent={ListHeaderComponent}
           ListEmptyComponent={ListEmptyComponent}
         />
+        <Pressable
+          style={styles.showFavoriteButton}
+          onPress={() => navigate('FavoriteItems')}>
+          <Text>Show favorites</Text>
+        </Pressable>
       </LoadingContainer>
     </SafeAreaView>
   );

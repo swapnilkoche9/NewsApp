@@ -1,6 +1,6 @@
 import React, { FC, useContext, useState, useEffect } from 'react';
 
-import { getAllFeeds } from '../api/feeds';
+import { getAllFeeds } from '../modules/api/feeds';
 import { Feed } from '../dtos/feeds';
 
 interface FeedsContextInterface {

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import RootNavigator from './navigation';
+import RootNavigator from './modules/navigation';
 import FeedsProvider from './provider/FeedsProvider';
 
 const App: FC = () => {

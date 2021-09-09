@@ -4,7 +4,7 @@ export interface Feed {
   link?: string;
   name: string;
   description?: string;
-  items?: FeedItem[];
+  items: FeedItem[];
 }
 
 export interface FeedItem {
